@@ -28,6 +28,7 @@
 }
 
 - (void)drawInContext:(CGContextRef)ctx {
+    UIGraphicsPushContext(ctx);
     CGPoint center = CGPointMake(self.bounds.size.width / 2, self.bounds.size.height / 2);
     CGFloat radius = MIN(self.bounds.size.width, self.bounds.size.height) / 2;
 
@@ -35,9 +36,23 @@
     [path addLineToPoint:center];
     [path closePath];
 
-    CGContextAddPath(ctx, path.CGPath);
     CGContextSetFillColorWithColor(ctx, self.fillColor);
-    CGContextFillPath(ctx);
+    [path fill];
+
+    [[UIColor whiteColor] set];
+
+    CGFloat percent = (_endAngle - _startAngle) / M_PI / 2 * 100;
+    NSString *text = [NSString stringWithFormat:@"%d", (int)MIN(100, ABS(percent))];
+    CGFloat mid = (_endAngle + _startAngle) / 2;
+    CGFloat x = .6 * radius * cosf(mid) + center.x;
+    CGFloat y = .6 * radius * sinf(mid) + center.y;
+
+    UIFont *font = [UIFont systemFontOfSize:radius / 4];
+    CGSize textSize = [text sizeWithFont:font];
+    CGRect textRect = CGRectMake(x - textSize.width / 2, y - textSize.height / 2, textSize.width, textSize.height);
+    [text drawInRect:textRect withFont:font];
+
+    UIGraphicsPopContext();
 }
 
 - (CABasicAnimation *)makeAnimationForKeyPath:(NSString *)keyPath {
