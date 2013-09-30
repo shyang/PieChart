@@ -8,6 +8,7 @@
 
 #import "TTPieView.h"
 #import "TTPieSliceLayer.h"
+#import "TTPieStaticLayer.h"
 
 @implementation TTPieView
 
@@ -23,6 +24,7 @@
         sum += [number doubleValue];
     }
 
+    // layers with animation
     CGFloat startAngle = 0;
     for (int i = 0; i < [item count]; ++i) {
         CGFloat endAngle = startAngle + M_PI * 2 * ([item[i] doubleValue] / sum);
@@ -39,6 +41,14 @@
         [self.layer addSublayer:layer];
         startAngle = endAngle;
         [layer startRotating];
+    }
+
+    // layer without animation
+    if ([item count]) {
+        TTPieStaticLayer *layer = [TTPieStaticLayer layer];
+        layer.frame = self.layer.bounds;
+        [layer setNeedsDisplay];
+        [self.layer addSublayer:layer];
     }
 }
 
