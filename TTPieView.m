@@ -36,6 +36,9 @@ static float gColors[][3] = {
     // layers with animation
     CGFloat startAngle = 0;
     for (int i = 0; i < [item count]; ++i) {
+        if ([item[i] doubleValue] <= 0) { // hide zero slice
+            continue;
+        }
         CGFloat endAngle = startAngle + M_PI * 2 * ([item[i] doubleValue] / sum);
 
         TTPieSliceLayer *layer = [TTPieSliceLayer layer];
@@ -53,7 +56,7 @@ static float gColors[][3] = {
     }
 
     // layer without animation
-    if ([item count]) {
+    if (sum > 0) {
         TTPieStaticLayer *layer = [TTPieStaticLayer layer];
         layer.frame = self.layer.bounds;
         [layer setNeedsDisplay];
