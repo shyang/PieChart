@@ -45,7 +45,7 @@ static float gColors[][3] = {
         layer.endAngle = endAngle;
 
         float *color = gColors[i % 6];
-        layer.fillColor = [UIColor colorWithRed:color[0] green:color[1] blue:color[2] alpha:.5].CGColor;
+        layer.fillColor = [UIColor colorWithRed:color[0] green:color[1] blue:color[2] alpha:1].CGColor;
 
         [self.layer addSublayer:layer];
         startAngle = endAngle;

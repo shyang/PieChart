@@ -17,7 +17,7 @@
     CGFloat radius = MIN(self.bounds.size.width, self.bounds.size.height) / 2;
 
     // white inner circle
-    [[UIColor colorWithWhite:1 alpha:.3] setFill];
+    [[UIColor colorWithWhite:1 alpha:1] setFill];
     UIBezierPath *circle = [UIBezierPath bezierPathWithArcCenter:center radius:radius / 3 startAngle:0 endAngle:M_PI * 2 clockwise:YES];
     [circle fill];
 
