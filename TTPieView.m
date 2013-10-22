@@ -43,6 +43,7 @@ static float gColors[][3] = {
 
         TTPieSliceLayer *layer = [TTPieSliceLayer layer];
         layer.frame = self.layer.bounds;
+        layer.contentsScale = [UIScreen mainScreen].scale;
         [layer setNeedsDisplay];
         layer.startAngle = startAngle;
         layer.endAngle = endAngle;
@@ -58,6 +59,7 @@ static float gColors[][3] = {
     // layer without animation
     if (sum > 0) {
         TTPieStaticLayer *layer = [TTPieStaticLayer layer];
+        layer.contentsScale = [UIScreen mainScreen].scale;
         layer.frame = self.layer.bounds;
         [layer setNeedsDisplay];
         [self.layer addSublayer:layer];
