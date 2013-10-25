@@ -28,6 +28,10 @@ static float gColors[][3] = {
 };
 
 - (void)setObject:(id)item {
+    for (id layer in [self.layer.sublayers copy]) {
+        [layer removeFromSuperlayer];
+    }
+
     double sum = 0;
     for (NSNumber *number in item) {
         sum += [number doubleValue];
