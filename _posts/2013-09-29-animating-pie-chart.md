@@ -59,7 +59,7 @@ title: "An animating pie chart"
 
 @end
 ```
-[完整代码](https://github.com/shyang/PieChart/blob/7c38518efc2325e08e432db4fbc5992b6ccc36b3/PieChart/TTPieSliceLayer.m)
+[完整代码](https://github.com/shyang/PieChart/blob/simplest/TTPieSliceLayer.m)
 
 注1: CABasicAnimation 缺省不支持自定义的属性，需要覆盖 +[CALayer needsDisplayForKey]
 
@@ -69,4 +69,4 @@ title: "An animating pie chart"
 
 ![with text]({{ site.url }}/assets/animate_angle_with_text.gif)
 
-[完整代码](https://github.com/shyang/PieChart/blob/b43d8c71d5848295eaf506fa8eedd1414cf0f824/PieChart/TTPieSliceLayer.m)
+[完整代码](https://github.com/shyang/PieChart/blob/master/TTPieSliceLayer.m)
