@@ -6,6 +6,8 @@
 //
 //
 
+#import <UIKit/UIKit.h>
+
 #import "TTPieSliceLayer.h"
 
 @implementation TTPieSliceLayer

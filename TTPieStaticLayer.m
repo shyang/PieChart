@@ -6,6 +6,8 @@
 //
 //
 
+#import <UIKit/UIKit.h>
+
 #import "TTPieStaticLayer.h"
 
 @implementation TTPieStaticLayer
