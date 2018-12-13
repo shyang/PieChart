@@ -5,7 +5,7 @@ title: "An animating pie chart"
 
 使用 CABasicAnimation 动画自定义的属性：
 
-![no text]({{ site.url }}/assets/animate_angle_no_text.gif)
+![no text](assets/animate_angle_no_text.gif)
 
 ```objc
 #import <QuartzCore/QuartzCore.h>
@@ -67,6 +67,6 @@ title: "An animating pie chart"
 
 扩展：加上百分比：
 
-![with text]({{ site.url }}/assets/animate_angle_with_text.gif)
+![with text](assets/animate_angle_with_text.gif)
 
 [完整代码](https://github.com/shyang/PieChart/blob/master/TTPieSliceLayer.m)
